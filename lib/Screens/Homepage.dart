@@ -1,6 +1,28 @@
+import "package:cloudmall_africa_clone/Widgets/HomePageAnimation.dart";
+import "package:cloudmall_africa_clone/Widgets/Mobile.dart";
 import "package:flutter/material.dart";
 
-class CloudMallHomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: ((context, constraints) {
+      if (constraints.maxWidth > 1000) {
+        return HomePageAnimation();
+      } else {
+        return Mobile();
+      }
+    }));
+  }
+}
+
+/*class CloudMallHomePage extends StatelessWidget {
   const CloudMallHomePage({super.key});
 
   @override
@@ -131,3 +153,4 @@ class CloudMallHomePage extends StatelessWidget {
     );
   }
 }
+*/
